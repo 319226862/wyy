@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d225c08"],{e678:function(n,e,t){"use strict";t.r(e);var u=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",[n._v("\n    乡村文旅\n")])},l=[],c={},i=c,o=t("2877"),r=Object(o["a"])(i,u,l,!1,null,null,null);r.options.__file="Cultural.vue";e["default"]=r.exports}}]);
+//# sourceMappingURL=chunk-2d225c08.bb43df2d.js.map
