@@ -23,8 +23,7 @@ export default {
       //   // {id:'002',title:'bbbbb',done:false},
       //   // {id:'003',title:'ccccc',done:true}
       // ]
-      // 或操作，如果左边为真，就用，不为真，用右边的空数组
-      todos:JSON.parse(localStorage.getItem('todos')) || []
+      todos:JSON.parse(localStorage.getItem('todos'))
     }
   },
   components:{
@@ -58,16 +57,8 @@ export default {
     }
   },
   watch:{
-    // 只能检测到数组的变化，但是数组内部某个值的变化无法监视
-    // todos(value){
-    //   localStorage.setItem('todos',JSON.stringify(value))
-    // }
-    // 需要用深度监视才能准确监视到（checked的选中状态）
-    todos:{
-      deep:true,
-      handler(value){
-        localStorage.setItem('todos',JSON.stringify(value))
-      }
+    todos(value){
+      localStorage.setItem('todos',JSON.stringify(value))
     }
   }
 }
