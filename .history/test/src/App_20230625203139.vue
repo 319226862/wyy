@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <!-- <h1>{{ msg }}</h1> -->
-    <!-- <School />
-    <Student /> -->
-    <Draw />
+    <h1>{{ msg }}</h1>
+    <School />
+    <Student />
+    <Animate />
   </div>
 </template>
 
 <script>
 import School from './components/School.vue';
 import Student from './components/Student.vue';
-import Draw from './components/Draw.vue';
+import Animate from './components/Animate.vue';
 export default {
   name: 'App',
   data(){
@@ -21,7 +21,7 @@ export default {
   components: {
     School,
     Student,
-    Draw
+    Animate
   },
   methods:{
     

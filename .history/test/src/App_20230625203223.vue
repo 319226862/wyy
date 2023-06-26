@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <!-- <h1>{{ msg }}</h1> -->
-    <!-- <School />
-    <Student /> -->
+    <h1>{{ msg }}</h1>
+    <School />
+    <Student />
     <Draw />
   </div>
 </template>
