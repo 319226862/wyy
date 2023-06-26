@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <button @click="getStudent">获取学生信息</button>
-    <button @click="getCar">获取车辆信息</button>
   </div>
 </template>
 
@@ -17,16 +16,6 @@ export default {
   methods:{
     getStudent(){
       axios.get('http://localhost:8080/api/students').then(
-        res=>{
-          console.log("成功",res.data)
-        },
-        error=>{
-          console.log("失败",error.message)
-        }
-      )
-    },
-    getCar(){
-      axios.get('http://localhost:8080/bus/cars').then(
         res=>{
           console.log("成功",res.data)
         },

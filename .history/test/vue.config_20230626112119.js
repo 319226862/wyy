@@ -16,12 +16,9 @@ module.exports = defineConfig({
         // ws:true,
         // changeOrigin: true
       },
-      '/bus':{
-        target:'http://localhost:5001',
-        pathRewrite:{'^/bus':''}
-        // ws:true,
-        // changeOrigin: true
-      },
+      // '/foo':{
+      //   target:'</url>'
+      // }
     }
   }
 })
