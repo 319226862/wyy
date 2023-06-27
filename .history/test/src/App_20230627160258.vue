@@ -9,27 +9,21 @@
     </Category> -->
 
     <Category title="games">
-      <template scope="data">
-        <ul>
-          <li v-for="(game,index) in data.games" :key="index">{{ game }}</li>
-        </ul>
-      </template>
+      <ul>
+        <li v-for="(game,index) in games" :key="index">{{ game }}</li>
+      </ul>
     </Category>
 
     <Category title="games">
-      <template scope="data">
-        <ol>
-          <li v-for="(game,index) in data.games" :key="index">{{ game }}</li>
-        </ol>
-      </template>
+      <ol>
+        oli v-for="(game,index) in games" :key="index">{{ game }}</li>
+      </ol>
     </Category>
 
     <Category title="games">
-      <template scope="data">
-        <h4>
-          <li v-for="(game,index) in data.games" :key="index">{{ game }}</li>
-        </h4>
-      </template>
+      <h4>
+        <li v-for="(game,index) in games" :key="index">{{ game }}</li>
+      </h4>
     </Category>
 
     <!-- <Category title="films">

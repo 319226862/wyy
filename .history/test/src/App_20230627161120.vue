@@ -16,21 +16,17 @@
       </template>
     </Category>
 
-    <Category title="games">
-      <template scope="data">
-        <ol>
-          <li v-for="(game,index) in data.games" :key="index">{{ game }}</li>
-        </ol>
-      </template>
+    <!-- <Category title="games">
+      <ol>
+        <li v-for="(game,index) in games" :key="index">{{ game }}</li>
+      </ol>
     </Category>
 
     <Category title="games">
-      <template scope="data">
-        <h4>
-          <li v-for="(game,index) in data.games" :key="index">{{ game }}</li>
-        </h4>
-      </template>
-    </Category>
+      <h4>
+        <li v-for="(game,index) in games" :key="index">{{ game }}</li>
+      </h4>
+    </Category> -->
 
     <!-- <Category title="films">
       <video slot="bottom" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>

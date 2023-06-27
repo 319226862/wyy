@@ -3,39 +3,20 @@
     <!-- <Category title="food" :listData="foods"/> -->
     <!-- <Category title="game" :listData="games"/> -->
     <!-- <Category title="film" :listData="films"/> -->
-    <!-- <Category title="food">
+    <Category title="food">
       <img slot="bottom" src="https://s3.ax1x.com/2021/01/16/srJlq0.jpg" />
       <a slot="footer" href="#">more</a>
-    </Category> -->
-
-    <Category title="games">
-      <template scope="data">
-        <ul>
-          <li v-for="(game,index) in data.games" :key="index">{{ game }}</li>
-        </ul>
-      </template>
     </Category>
 
     <Category title="games">
-      <template scope="data">
-        <ol>
-          <li v-for="(game,index) in data.games" :key="index">{{ game }}</li>
-        </ol>
-      </template>
+      <ul>
+          <li v-for="(game,index) in games" :key="index">{{ game }}</li>
+      </ul>
     </Category>
 
-    <Category title="games">
-      <template scope="data">
-        <h4>
-          <li v-for="(game,index) in data.games" :key="index">{{ game }}</li>
-        </h4>
-      </template>
+    <Category title="films">
+      <video src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
     </Category>
-
-    <!-- <Category title="films">
-      <video slot="bottom" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
-      <a slot="footer" href="#">more</a>
-    </Category> -->
   </div>
 </template>
 
@@ -44,7 +25,16 @@
 import Category from './components/Category.vue'
 export default {
   name: 'App',
-  
+  data(){
+    return {
+      msg:'welcome',
+      foods:['1','2','3','4'],
+      games:['11','22','33','44'],
+      films:['111','222','333','444'],
+      video:'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
+      img:'https://s3.ax1x.com/2021/01/16/srJlq0.jpg'
+    }
+  },
   components: {Category},
   methods:{
     
