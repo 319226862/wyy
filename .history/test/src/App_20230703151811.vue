@@ -39,7 +39,6 @@
 
 
     <Count/>
-    <hr/>
     <Person/>
   </div>
 </template>

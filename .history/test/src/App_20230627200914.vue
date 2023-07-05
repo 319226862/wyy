@@ -39,8 +39,6 @@
 
 
     <Count/>
-    <hr/>
-    <Person/>
   </div>
 </template>
 
@@ -48,11 +46,12 @@
 // import axios from 'axios'
 // import Category from './components/Category.vue'
 import Count from './components/Count.vue';
-import Person from './components/Person.vue';
 export default {
   name: 'App',
-  components: {Count,Person},
+  
+  components: {Count},
   methods:{
+    
   }
 }
 </script>
@@ -65,6 +64,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
+  justify-content:space-around
 }
-
+img{
+  width: 100px;
+}
+video{
+  width: 100px;
+}
 </style>

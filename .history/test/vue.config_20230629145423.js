@@ -10,6 +10,7 @@ module.exports = defineConfig({
   // 开启代理服务器（2）
   devServer:{
     proxy:{
+      ws: false,
       '/api':{
         target:'http://localhost:5000',
         pathRewrite:{'^/api':''}
@@ -22,15 +23,6 @@ module.exports = defineConfig({
         // ws:true,
         // changeOrigin: true
       },
-    },
-    host: '0.0.0.0',
-    // https:true,
-    port: 6103,
-    client: {
-      webSocketURL: 'ws://0.0.0.0:6103/ws',
-    },
-    headers: {
-      'Access-Control-Allow-Origin': '*',
     }
-  },
+  }
 })
