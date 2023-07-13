@@ -1,7 +1,7 @@
 <template>
     <div class="sidebar-container" :class="{'collapse-width': isCollapse}">
         <div class="logo" :class="{'collapse-logo': isCollapse}">
-            管理系统
+            系统设计
         </div>
         <el-menu
                 :default-active="onRoutes"
@@ -16,12 +16,12 @@
         >
             <el-menu-item index="dashboard">
                 <i class="fa fa-tachometer fa-fw"></i>
-                <span slot="title">数据统计</span>
+                <span slot="title">跟踪</span>
             </el-menu-item>
             <!-- 
                 均涉及到信息的增删改查
             -->
-            <el-submenu index="architecture">
+            <!-- <el-submenu index="architecture">
                 <template slot="title">
                     <i class="fa fa-book fa-fw"></i>
                 <span>党建管理</span>
@@ -36,9 +36,9 @@
                         <span slot="title">党员管理</span>
                     </el-menu-item>   
                 </el-menu-item-group>
-            </el-submenu>
+            </el-submenu> -->
             <!-- 乡村治理 -->
-            <el-submenu index="rusticManage">
+            <!-- <el-submenu index="rusticManage">
                 <template slot="title">
                     <i class="fa fa-book fa-fw"></i>
                 <span>乡村治理</span>
@@ -61,7 +61,7 @@
             <el-menu-item index="issue">
                 <i class="fa fa-pencil fa-fw"></i>
                 <span slot="title">政务/宣传发布</span>
-            </el-menu-item>
+            </el-menu-item> -->
         </el-menu>
     </div>
 </template>
