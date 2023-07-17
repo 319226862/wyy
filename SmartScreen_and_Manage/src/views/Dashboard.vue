@@ -1,62 +1,48 @@
 <template>
-    <div id="dashBoard">
-        <div class="left">
-            <el-select v-model="value" placeholder="当前未选择摄像头">
-                <el-option
-                :disabled="item.disabled"
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-                </el-option>
-            </el-select>
-            <el-upload
-                action="https://jsonplaceholder.typicode.com/posts/"
-                class="upload-demo"
-                multiple
-                :limit="3"
-                :file-list="fileList">
-                <el-button size="small" type="primary">若无摄像头，点击此处上传mp4文件</el-button>
-                <!-- <div slot="tip" class="el-upload__tip">只能上传mp4文件，且不超过100MB</div> -->
-            </el-upload>
-            <div class="radioList">
-                <span>选择测试模型:</span>
+    <div>
+        <div class="upload">
+            <!-- @click="promptPassword" -->
+            <div class="uploadBox" v-for="(i,index) in spanList" :key="index">
+                <span class="uploadSpan">{{ i }}</span>
+                <el-upload
+                    action="#"
+                    list-type="picture-card"
+                    :auto-upload="false">
+                        <i slot="default" class="el-icon-plus"></i>
+                        <div slot="file" slot-scope="{file}">
+                            <img
+                                class="el-upload-list__item-thumbnail"
+                                :src="file.url" alt=""
+                            >
+                        </div>
+                    </el-upload>
+            </div>
+        </div>
+        <div class="radioList">
+            <span style="margin-right:60px;">选择测试模型:</span>
+            <el-radio v-model="radio" label="1">EdgeAwareYOLO</el-radio>
+            <el-radio v-model="radio" label="2">FAA</el-radio>
+            <el-radio v-model="radio" label="3">TSYOLO</el-radio>
+        </div>
+        <el-card class="box-card">
+            <div class="text item">
+                Image import is successful.
                 <br/>
-                <el-radio v-model="radio" label="1">CFTracker</el-radio>
-                <el-radio v-model="radio" label="2">MGMOT</el-radio>
-                <el-radio v-model="radio" label="3">SORT</el-radio>
-                <el-radio v-model="radio" label="4">SORT+GC</el-radio>
-                <el-radio v-model="radio" label="5">OCSORT+GC</el-radio>
+                <br/>
+                Loading weights from the pre-train model.
+                <br/>
+                <br/>
+                Start the detection.
+                <br/>
+                PSNR:24.25.
+                <br/>
+                SSIM:0.8317.
             </div>
-            <div class="buttonList">
-                <el-button plain>开始测试</el-button>
-                <el-button plain>清除日志</el-button>
-                <el-button plain>结束程序</el-button>
-            </div>
-        </div>
-        <div class="center">
-            <!-- <image src="../assets/2.png"/> -->
-        </div>
-        <div class="right">
-            <div class="rightTop" style="margin:30px auto">
-                跟踪数量：5
-            </div>
-            <el-card class="box-card">
-                <div class="text item">
-                    <span>id：16</span>
-                    <span>置信度：0.997</span>
-                    <br/>
-                    <span>id：19</span>
-                    <span>置信度：0.985</span>
-                    <br/>
-                    <span>id：23</span>
-                    <span>置信度：0.997</span>
-                    <br/>
-                    <span>id：39</span>
-                    <span>置信度：0.994</span>
-                    <br/>
-                </div>
-            </el-card>
+        </el-card>
+        <div class="buttonList">
+            <el-button plain>开始测试</el-button>
+            <el-button plain>清除日志</el-button>
+            <el-button plain>结束程序</el-button>
         </div>
     </div>
 </template>
@@ -66,73 +52,29 @@
         data(){
             return{
                 spanList:[
-                    '高分辨率图像(HR)','低分辨率图像(LR)','超分辨率图像(SR)'
+                    '原始图像','检测结果'
                 ],
                 dialogImageUrl: '',
                 dialogVisible: false,
                 disabled: false,
-                radio:'7',
-                fileList: [
-                    {
-                        name: 'test.mp4', 
-                        url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-                    }
-                ],
-                options: [{
-                    value: '选项1',
-                    label: '监控点1',
-                    disabled: true
-                    }, {
-                    value: '选项2',
-                    label: '监控点2',
-                    disabled: true
-                    }, {
-                    value: '选项3',
-                    label: '监控点3',
-                    disabled: true
-                    }, {
-                    value: '选项4',
-                    label: '监控点4',
-                    disabled: true
-                    }],
-                    value: ''
-                        }
+                radio:'7'
+            }
         },
         methods:{
             promptPassword(){
-                window.prompt("您必须输入密码才能获取访问摄像头和读取文件夹的权限")
+                window.prompt("请输入密码以获取访问权限")
             }
         }
     }
 </script>
 <style>
-#dashBoard{
-    display: flex;
-    justify-content: space-around;
-}
-.text span{
-    display:block;
-}
-.left{
-    width:20%;
-}
-.center{
-    width:65%;
-}
-.right{
-    width: 20%;
-}
-.upload-demo{
-    margin-bottom: 90px;
-    margin-top: 90px;
-}
 .radioList{
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    margin-bottom: 90px;
+    width: 60%;
+    margin: 30px auto;
 }
 .upload{
+    margin: 0 auto;
+    width: 60%;
     display: flex;
     justify-content: space-between;
 }
@@ -144,7 +86,10 @@
 .uploadSpan{
 }
 .box-card{
-    height: 90%;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 40px;
+    height: 200px;
 }
 .el-upload--picture-card{
     width:200px;

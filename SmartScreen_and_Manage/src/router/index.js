@@ -17,7 +17,7 @@ const router = new Router({
                     path: '/dashboard',
                     component: () => import('@/views/Dashboard.vue'),
                     name: 'Dashboard',
-                    meta: {title: '跟踪'}
+                    meta: {title: '检测'}
                 },
                 // 党建管理
                 {

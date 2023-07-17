@@ -28,11 +28,7 @@ export default new VueRouter({
                         {
                             name:'xiangqing',
                             path:'detail',
-                            component:Detail,
-
-                            // props
-                            // props:true 
-
+                            component:Detail
                         }
                     ]
                 },

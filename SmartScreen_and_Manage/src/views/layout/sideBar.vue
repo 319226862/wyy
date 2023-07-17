@@ -16,7 +16,7 @@
         >
             <el-menu-item index="dashboard">
                 <i class="fa fa-tachometer fa-fw"></i>
-                <span slot="title">跟踪</span>
+                <span slot="title">检测</span>
             </el-menu-item>
             <!-- 
                 均涉及到信息的增删改查

@@ -31,7 +31,7 @@ export default new VueRouter({
                             component:Detail,
 
                             // props
-                            // props:true 
+                            props:true 
 
                         }
                     ]
