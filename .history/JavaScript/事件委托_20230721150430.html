@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>第1个</li>
+        <li>第2个</li>
+        <li>第3个</li>
+        <li>第4个</li>
+        <li>第5个</li>
+    </ul>
+    <script>
+        // 点击每个li，变色
+        // 事件委托
+        const ul = document.querySelector('ul')
+        ul.addEventListener('click',function(e){
+            e.style.color = 'red'
+        })
+    </script>
+</body>
+</html>
