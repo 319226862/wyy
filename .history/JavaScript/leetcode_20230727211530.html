@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                /**
+         * @param {number} millis
+         */
+        async function sleep(millis) {
+            const a =  new Promise((resolve, reject) => {
+                // setTimeout(() => {
+                //     resolve()
+                // }, millis)
+                console.log(resolve())
+            })
+        }
+        sleep(1000)
+        /** 
+         * let t = Date.now()
+         * sleep(100).then(() => console.log(Date.now() - t)) // 100
+         */
+    </script>
+</body>
+</html>
