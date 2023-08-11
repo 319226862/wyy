@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        s = 'abcabcbb'
+        var lengthOfLongestSubstring = function(s) {
+            const num = s
+            // console.log(s);
+            // 将字符串拆分为数组
+            // console.log(s.split(''));
+            // const num = s.split('')
+            // const map = new Map()
+            // // 继续按照hash表操作?
+            // // 1.将所有字符都存入hashmap中,set操作会覆盖value
+            // for (let i = 0; i < num.length; i++) {
+            //     map.set(num[i],i)
+            // }
+            // console.log(map);
+
+            // 双循环
+            // let str = ''
+            // let len = 0
+            // for (let i = 0; i < num.length; i++) {
+            //     for (let j = i + 1; j < num.length; j++) {
+            //         // 双循环,第一轮,i=a,j从b开始往下找
+            //         // 如果i=j
+            //         if(num[i]===num[j]){
+            //             len = j-i 
+            //         }
+            //         // ?怎么确定往后循环不会再出现a?
+            //     }
+            // }
+
+            // 还是要用hash Map   方法一
+            // const map = new Map()
+            // let left = 0
+            // let len = 0
+            // for (let i = 0; i < num.length; i++) {
+            //     // 如果hashmap中存在这个值，左指针++，
+            //     if(map.has(num[i])&&map.get(num[i])>=left){
+            //         left = map.get(num[i]) + 1
+            //     }else{
+            //         // 如果不存在这个值，判断二次出现的这个值时，长度为多少
+            //         // 取max
+            //         len = Math.max(len, i - left + 1)
+            //     }
+            //     map.set(num[i],i)
+            // }
+            // console.log(len)
+            // return len
+
+            // 方法二
+            // 数组求法
+            let res = []
+            let len = 0
+            // 删除第一个字符
+            // console.log([1,2,3].shift());
+            for (let str of s){
+                // console.log(str);
+                // 如果数组里面包含str这个字符
+                if(res.includes(str)){
+                    console.log(res);
+                    res.shift()
+                }
+                res.push(str)
+                len = Math.max(len, res.length)
+            }
+            // console.log(len);
+            return len
+        };
+        lengthOfLongestSubstring(s)
+    </script>
+</body>
+</html>

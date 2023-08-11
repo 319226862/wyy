@@ -152,7 +152,7 @@
       document.querySelector('.list').innerHTML = goodsList.map(item=>{
         // console.log(item); //每一条对象
         const {picture,name,count,price,spec} = item
-        // 提取属性值，用于拼接
+        // 提取属性值，用于拼接 
         const specNew = Object.values(spec).join('/')
         return `
             <div class="item">
@@ -161,7 +161,7 @@
               <p class="spec">${specNew}</p>
               <p class="price">${price.toFixed(2)}</p>
               <p class="count">x${count}</p>
-              <p class="sub-total">${price * count}</p>
+              <p class="sub-total">${price * count }</p>
             </div>
         `
       }).join('')

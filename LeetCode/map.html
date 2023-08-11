@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 求两数之和是否为target
+        // 爆推
+        //         var twoSum = function(nums, target) {
+        //     for(let i=0;i<nums.length;i++){
+        //         for(let j=i+1;j<nums.length;j++){
+        //             if(nums[i]+nums[j]===target)
+        //                 return [i,j]
+        //         }
+        //     }
+        // };
+        // const map = new Map()
+
+        // const o = {p:'hello'}
+        // console.log(o);
+
+        // // map.set('key','value')
+        // // 这个key，可以是值，或者字符串
+        // map.set(o,'world')
+        // console.log(map);
+
+        // console.log(map.get(o));
+        
+        const nums = [3,2,4]
+        const target = 6
+        var twoSum = function(nums, target) {
+            // console.log(nums,target);
+            // 先建立hashMap
+            let map = new Map()
+            for (let i = 0; i < nums.length; i++) {
+                if(map.has(target-nums[i])){
+                    return [i,map.get(target-nums[i])]
+                }else{
+                    map.set(nums[i],i)
+                }
+            }
+            return []
+        };
+        twoSum(nums,target)
+    </script>
+</body>
+</html>
