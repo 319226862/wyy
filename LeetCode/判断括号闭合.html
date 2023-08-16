@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const s = "()[}{}"
+        console.log(s);
+
+        var isValid = function(s) {
+            // 存储括号对
+            const map = new Map([
+                ['(',')'],
+                ['[',']'],
+                ['{','}']
+            ])
+            console.log(map);
+
+            let stk = []
+            // 长为奇数，返回false
+            if(s.length%2 == 1) return false
+
+            // 长为偶数
+            for (let i = 0; i < s.length; i++) {
+                // 获取当前字符的右括号
+                right = map.get(s[i])
+
+                // 如果右括号存在，则说明他是左括号
+                // 如果不存在返回undefined
+
+                // s[i] 左括号  
+                // map.get(s[i]) 右括号
+
+                if (right) {
+                    // 是左括号
+                    stk.push(s[i])
+                }else if (right == undefined){
+                    // 是右括号
+                    // stk.push(s[i])
+
+                    // if()
+                    console.log("栈顶元素",stk[stk.length-1]);
+                    if(s[i]==map.get(stk[stk.length-1])){
+                        stk.pop()
+                    }else {
+                        return false
+                    }
+                }
+            }
+            return stk.length == 0
+        };
+
+        isValid(s)
+    </script>
+</body>
+</html>
