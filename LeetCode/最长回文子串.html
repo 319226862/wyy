@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        s = "abb"
+            // console.log(s);
+            // console.log(s.split(''));
+            // console.log(s.split('').reverse());
+            // console.log(s.split('').reverse().join(''));
+            // if(s.length<3){
+            //     console.log(s[1],s[2]);
+            //     if(s[0]==s[1]) console.log(s);
+            //     else return s.substring(0,1)
+            // }
+            // // 反转字符串
+            // let s_reverse = s.split('').reverse().join('')
+
+            // // 右指针
+            // let right = s_reverse.length - 1
+            // let str = []
+            // for (let i = 0; i < s_reverse.length; i++) {
+            //     // 两个指针相夹得到的最终子串
+            //     console.log(s_reverse.substring(i,right+1));
+            //     console.log(s.includes(s_reverse.substring(i,right+1)));
+            //     // 如果存在这一回文子串
+            //     if (s.includes(s_reverse.substring(i,right+1))&&s_reverse[s_reverse.length-1]!=s_reverse[s_reverse.length-2]) {
+            //         str.push(s_reverse.substring(i,right+1))
+            //         break
+            //     }else if(s_reverse[s_reverse.length-1]!=s_reverse[s_reverse.length-2]){
+            //         right--
+            //     }
+
+
+var longestPalindrome = function(s) {
+    let str = '';
+    for(let i = 0,start = 0, end = 0; i<s.length; i++) {
+        start = i;
+        end = i;
+        while(end + 1 < s.length && s[end + 1] === s[i]) {
+            end +=1;
+        }
+        while(start - 1 >=0 && end + 1 < s.length && s[end + 1] === s[start - 1]) {
+            end +=1;
+            start -=1;
+        }
+        if (end > start && str.length < end - start + 1) {
+            str = s.slice(start, end + 1);
+        }
+    }
+    return str ? str : s[0];
+};
+
+    </script>
+</body>
+</html>

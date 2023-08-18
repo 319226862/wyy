@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        var input =document.querySelector('input');
+        // input.oninput = function(){
+        //     console.log('事件被触发');
+        // }
+        // 防抖
+        // function debounce(callBack, time){
+        //     let timer = null
+        //     const _debounce = function(){
+        //         if (timer) {
+        //             clearTimeout(timer)
+        //         }
+        //         timer = setTimeout(()=>{
+        //             callBack()
+        //         },time)
+        //     }
+        //     return _debounce
+        // }
+        // function fn(){
+        //     console.log("防抖");
+        // }
+        // input.addEventListener('input',debounce(fn,1000))
+        // 节流
+        function throttle(callBack,time){
+            let preTime = Date.now()
+            const _throttle = function(){
+                let now = Date.now()
+                if(now - preTime >= time){
+                    fn()
+                    preTime = now
+                }
+            }
+            return _throttle
+        }
+        function fn(){
+            console.log("节流",new Date().toLocaleString());
+        }
+        input.addEventListener('input',throttle(fn,1000))
+    </script>
+</body>
+</html>

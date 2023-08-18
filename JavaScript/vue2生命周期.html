@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>分析生命周期</title>
+		<!-- 引入Vue -->
+		<script type="text/javascript" src="vue.js"></script>
+	</head>
+	<body>
+		<!-- 准备好一个容器-->
+		<div id="root">
+			<h2>当前的n值是：{{n}}</h2>
+			<button @click="add">点我n+1</button>
+		</div>
+	</body>
+
+	<script >
+		Vue.config.productionTip = false //阻止 vue 在启动时生成生产提示。
+
+		new Vue({
+			el:'#root',
+			data:{
+				n:1
+			},
+			methods: {
+				add(){
+					this.n++
+				},
+			},
+			beforeCreate() {
+				console.log('beforeCreate')
+                console.log(this);
+                // 打断点
+                debugger;
+			}
+		})
+	</script>
+</html>

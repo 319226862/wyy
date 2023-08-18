@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+        /**
+     * @param {ListNode} head
+     * @return {boolean}
+     */
+    head = [3,2,0,-4]
+    var hasCycle = function(head) {
+        // console.log(head.next);
+        if (head == null || head.next == null) {
+            console.log(head);
+        }
+        var slow=head; 
+        var fast=head.next;
+        while(slow && fast){
+            if(slow==fast){
+                return true;
+            }
+            slow=slow.next;
+            fast=fast.next?fast.next.next:null;
+            if(!slow || !fast){
+                return false
+            }
+        }
+
+    };
+    hasCycle(head)
+</script>
+</body>
+</html>

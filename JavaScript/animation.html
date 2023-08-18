@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  #box {
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+    position: relative;
+    animation: mytest 3s linear 1s;
+    -webkit-animation: mytest 3s linear 1s;
+  }
+
+  @keyframes mytest {
+    1% {
+      left: 0px;
+    }
+
+    20% {
+      left: 200px;
+    }
+
+    50% {
+      left: 500px;
+    }
+
+    70% {
+      left: 700px;
+    }
+
+    100% {
+      left: 1000px;
+    }
+  }
+
+  @-webkit-keyframes mytest {
+    1% {
+      left: 0px;
+    }
+
+    20% {
+      left: 200px;
+    }
+
+    50% {
+      left: 500px;
+    }
+
+    70% {
+      left: 700px;
+    }
+
+    100% {
+      left: 1000px;
+    }
+  }
+</style>
+
+<body>
+  <div id="box"></div>
+</body>
+
+</html>
