@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,1,8,8,12,12,15,15,16,16];
+
+        function unique(arr){
+            const a = arr.filter(function(item,index,arr){
+                // item是值，index是索引号，arr是原数组
+                // console.log(item,index,arr);
+                // 返回arr中
+                console.log();
+                return arr.indexOf(item)===index
+            })
+            return a
+        }
+        unique(arr)
+
+
+
+
+        // function unique(arr){
+        //     let res = []
+        //     for (let i = 0; i < arr.length; i++) {
+        //         // 检测res中是否包含值arr[i]
+        //         // 如果不包含，push进res
+        //         if (!res.includes(arr[i])) {
+        //             res.push(arr[i])
+        //         }
+        //     }
+        //     console.log(res);
+        // }
+        // unique(arr)
+
+
+
+        
+        // function unique(arr){
+        //     let res = []
+        //     for (let i = 0; i < arr.length; i++) {
+        //         // 检查数组res中是否包含arr[i]
+        //         // 如果不包含，返回的应该是-1
+        //         if (res.indexOf(arr[i])===-1) {
+        //             res.push(arr[i])
+        //         }
+        //     }
+        //     console.log(res);
+        // }
+        // unique(arr)
+
+
+
+
+        // function unique(arr){
+        //     for (let i = 0; i < arr.length; i++) {
+        //         for (let j = i + 1; j < arr.length; j++) {
+        //             if(arr[i]==arr[j]){
+        //                 console.log(i,arr[i]);
+        //                 // 要删除的起始位置，从起始位置开始删除的数量
+        //                 arr.splice(i,1)
+        //             }
+        //         }
+        //     }
+        //     console.log(arr);
+        // }
+        // unique(arr)
+
+
+        // function unique (arr) {
+        //     // NaN,undefined也可以存，且NaN之间被看作是相同的值
+        //     // Set方法允许你存储任何类型的唯一值，是值的集合，Set中的元素是唯一的
+        //     const a = new Set(arr)
+        //     // console.log(a);   //Set(5) {1, 8, 12, 15, 16}
+
+        //     // Array.from()将伪数组（本质是对象）转化为真数组
+        //     console.log(Array.from(a));
+        // }
+        // unique(arr)
+    </script>
+</body>
+</html>

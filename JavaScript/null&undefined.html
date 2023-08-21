@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(null==undefined);   //true
+        console.log(null===undefined);   //false
+
+        function fn(){
+            const a = 1
+        }
+        const b = fn()
+        console.log(b);
+
+        console.log(typeof(null));   //object
+        console.log(typeof(undefined));    //undefined
+    </script>
+</body>
+</html>

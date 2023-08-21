@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 首先定义一个类，初始化一个空对象用于存放所有事件
+    class EventBus{
+        constructor(){
+            this.eventObject = {}
+        }
+
+        // 发布事件
+        publish(eventName){
+            // 取出当前事件的所有回调函数
+            const callbackList = this.eventObject[eventName]
+
+            if(!callbackList) return console.warn(eventName+"not found");
+
+            // 执行每一个回调函数
+            for(let callback of callbackList){
+                callback()
+            }
+        }
+
+        // 订阅事件
+        subscribe(eventName, callback){
+            // 初始化这个事件
+            if(!this.eventObject[eventName]){
+                this.eventObject[eventName] = []
+            }
+
+            // 存储订阅者的回调函数
+            this.eventObject[eventName].push(callback)
+        }
+    }
+
+    const eventBus = new EventBus()
+
+    // 订阅事件test
+    eventBus.subscribe("test",()=>{
+        console.log("A");
+    })
+    eventBus.subscribe("test",()=>{
+        console.log("B");
+    })
+    eventBus.subscribe("test",()=>{
+        console.log("C");
+    })
+    // 发布事件
+    eventBus.publish("test")
+</script>
+</body>
+</html>

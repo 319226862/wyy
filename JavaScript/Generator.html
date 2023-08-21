@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function *gen(){//声明一个生成器
+            let t1 = yield "hello";
+            console.log(t1);
+            let t2 = yield "world";
+            console.log(t2);
+        }
+        let g = gen();
+
+        let x = g.next();   //{value: 'hello', done: false}
+        // console.log(x);
+
+        let y = g.next("aaaa");
+        // console.log(y);   //{value: 'world', done: false}
+
+        let z = g.next("bbbb")
+        // console.log(z);   //{value: undefined, done: true}
+
+
+        console.log(x.value,y.value);
+        // aaaa   bbbb    hello world
+
+    </script>
+</body>
+</html>

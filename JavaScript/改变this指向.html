@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name="lucy";
+        let obj={
+            name:"martin",
+            say:function (...a) {
+                console.log(this.name);
+                console.log(...a);
+            }
+        };
+
+        let say = obj.say
+        // bind
+        // 参数一是this指向，参数二是列表（但是这个列表可以分多次传入，call是一次性传入）
+        // 改变this指向后不会立即指向，而是返回一个永久改变this指向的函数
+        setTimeout(function(){
+            let a = say.bind(obj,1,2,3,4)   
+            a(7)  //martin  1  2  3  4  7
+        },0)
+
+        say(4,5,6)  //lucy  4  5  6
+
+
+        // let say = obj.say
+        // // call()
+        // // 参数一是this的指向，参数二是列表（不是数组）
+        // // 当参数一为null或者undefined时，默认指向window
+        // setTimeout(function(){
+        //     say.call(obj,1,2,3,4)   //martin  1  2  3  4
+        // },0)
+        // // 说明apply只是临时改变一次this指向
+        // say(4,5,6)   //lucy  4  5  6
+
+        // // apply
+        // // 参数一是this的指向，参数二是函数接收的参数，以数组形式传入
+        // // 当参数一为null或者undefined时，默认指向window
+        // // say.apply(参数一，参数二)
+        // // 使用apply改变指向后原函数会立即执行，且只临时改变this指向一次
+        // let say = obj.say
+        // setTimeout(function(){
+        //     say.apply(obj,[1,2])   //martin  1  2
+        // },0)
+        // // 说明apply只是临时改变一次this指向
+        // say("4","5")   //lucy  4  5
+
+        // // apply方法可以将数组参数转换成列表参数传入
+        // console.log(Math.max.apply(null,[1,10,2,3]));
+        // console.log(Math.max(...[1,10,2,3]));
+
+    </script>
+</body>
+</html>
