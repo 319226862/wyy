@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .wrapper {
+        height: 500px;
+    }
+    
+    .center-wrapper,
+    .left,
+    .right {
+        float: left;
+        height: 500px;
+    }
+    
+    .center-wrapper {
+        width: 100%;
+        background-color: tomato;
+    }
+    
+    .center {
+        margin: 0 200px 0 300px;
+        height: 500px;
+    }
+    
+    .left {
+        width: 300px;
+        margin-left: -100%;
+        background-color: lightgreen;
+    }
+    
+    .right {
+        width: 200px;
+        margin-left: -200px;
+        background-color: lightskyblue;
+    }
+ 
+</style>
+<body>
+    <div class="wrapper">
+        <div class="wrapper">
+            <div class="center-wrapper">
+                <div class="center">1111111</div>
+            </div>
+         
+            <div class="left"></div>
+            <div class="right"></div>
+         
+        </div>
+    </div>
+</body>
+</html>
